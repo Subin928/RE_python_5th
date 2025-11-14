@@ -87,4 +87,4 @@ print(users.index("soojin")) # 2
 # users 튜플을 정렬한 결과를 sorted_users에 저장하고 출력하세요.
 
 sorted_users = tuple(sorted(users))
-print(sorted_users)
+print(sorted_users) # ('eunji', 'minji', 'minji', 'minji', 'soojin')
