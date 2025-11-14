@@ -66,6 +66,7 @@ print("대칭차집합", s_symm2) # 대칭차집합 {1, 2, 4, 5}
 
 # 문제 1. 중복 제거 및 개수 세기
 # 중복을 제거한 후, 총 몇 명이 제출했는지 출력하는 프로그램 작성
+# submissions = ['kim', 'lee', 'kim', 'park', 'choi', 'lee', 'lee']
 
 submissions = ['kim', 'lee', 'kim', 'park', 'choi', 'lee', 'lee']
 unique_students = set(submissions)
@@ -78,6 +79,8 @@ print("제출자 명단:", unique_students) # 제출자 명단: {'park', 'choi',
 # 문제 2. 공통 관심사 찾기
 # 두 명의 사용자가 각자 좋아하는 영화 장르를 아래와 같이 입력했습니다.
 # 두 사용자의 공통 관심 장르, 서로 다른 장르, 모든 장르 목록을 출력하세요.
+# user1 = {'SF', 'Action', 'Drama'}
+# user2 = {'Drama', 'Romance', 'Action'}
 
 user1 = {'SF', 'Action', 'Drama'}
 user2 = {'Drama', 'Romance', 'Action'}
@@ -132,6 +135,8 @@ print(b.isdisjoint(c)) # True
 # 문제 3. 부분집합 관계 판단
 # 어떤 유저가 가지고 있는 자격증 목록과 특정 직무에 필요한 자격증 목록이 주어집니다.
 # 이 사용자가 지원 자격을 갖추었는지 확인하세요.
+# my_certificates = {'SQL', 'Python', 'Linux'}
+# job_required = {'SQL', 'Python'}
 
 my_certificates = {'SQL', 'Python', 'Linux'}
 job_required = {'SQL', 'Python'}
