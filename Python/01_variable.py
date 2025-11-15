@@ -4,16 +4,16 @@
 """
 
 # 출력 : print 함수
-print("Hello World")
+print("Hello World") # Hello World
 
 # print 구분자 옵션
 # sep : 기본값 = 공백
-print("가", "나", "다", sep="-")
+print("가", "나", "다", sep="-") # 가-나-다
 
 #print 줄바꿈 옵션
 # end
-print("안녕하세요.", end=" ")
-print("반갑습니다.")
+print("안녕하세요.", end=" ") # 안녕하세요.
+print("반갑습니다.") # 반갑습니다.
 
 # 변수
 '''
@@ -43,7 +43,7 @@ user_name = "Luna"
 hello = "안녕하세요"
 hello = "반갑습니다"
 hello = 1
-print(hello)
+print(hello) # 1
 
 # 한 줄에 여러 변수
 a = 1
@@ -51,10 +51,10 @@ b = 2
 c = 3
 a, b, c = 4,5,6
 
-print(a,b,c)
+print(a,b,c) # 4,5,6
 
 x = 10
 y = 20
 
 x, y = y,x
-print(x,y)
+print(x,y) # 20 10
