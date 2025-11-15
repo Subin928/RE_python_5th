@@ -7,7 +7,7 @@ print(type(my_int1)) # <class 'int'>
 # 실수형 (float)
 # 부동 소수점 방식
 my_float = 100.0
-print(type(my_float))
+print(type(my_float)) # <class 'float'>
 
 # 문자열 (string, str)
 my_str1 = '' # 빈 문자열
@@ -81,7 +81,10 @@ age = 20
 print("내 이름은", name, "이고, 나이는", age, "입니다.")
 print(f"내 이름은 {name}이고, 나이는 {age}입니다.")
 
-# 실습 1
+# 실습 1. 영화정보 출력하기
+# 영화 정보를 변수로 만들어 한 번에 출력해 보세요.
+# 출력 문장 형식에 맞게 f-string을 사용하고, 1줄로 작성하세요.
+# 변수 : 영화이름(title), 감독(director), 개봉 년도(year), 장르(genre)
 # title, director, year, genre = "Inception", "Christopher Nolan", 2010, "Sci-Fi"
 # print(f"Title: {title} Director: {director} Year: {year}, Genre: {genre}"")
 title = "Inception"
@@ -91,7 +94,10 @@ genre = "Sci-Fi"
 
 print(f"Title: {title} Director: {director} Year: {year} Genre: {genre}")
 
-#실습 2
+#실습 2. 자기소개 하기
+# f-string을 사용해서 자기 소개를 해봅시다.
+# print를 '한번만 사용'해서, 여러 줄의 문장이 아래와 같이 출력되도록 합시다.
+# 변수 : 이름, 나이, MBTI
 # name, age, mbti = "이수빈", 25, "INFP"
 # # print(f"""안녕하세요
 # 제 이름은 {name}이고,
