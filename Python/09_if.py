@@ -162,17 +162,63 @@ else:
 # 입력한 금액이 선택한 식품의 가격 이상이면 구매에 성공한 메시지를 출력합니다.
 # 금액이 부족할 경우 "금액이 부족합니다."를 출력합니다.
 
-money = int(input("금액을 입력하세요"))
-food = input("식품을 선택하세요 (김밥/삼각김밥/도시락): ")
+# money = int(input("금액을 입력하세요"))
+# food = input("식품을 선택하세요 (김밥/삼각김밥/도시락): ")
 
-if food == "김밥":
-    price = 2500
-elif food == "삼각김밥":
-    price = 1500
-elif food == "도시락":
-    price = 4000
+# if food == "김밥":
+#     price = 2500
+# elif food == "삼각김밥":
+#     price = 1500
+# elif food == "도시락":
+#     price = 4000
 
-if money >= price:
-    print("구매 성공!")
+# if money >= price:
+#     print("구매 성공!")
+# else:
+#     print("금액이 부족합니다.") # -> 내가 해본 것
+
+# 정답
+
+# 1)
+# money = int(input("금액을 넣어주세요: "))
+# item = input("김밥 / 삼각김밥 / 도시락 중 골라주세요: ")
+
+# KIMBAB = "김밥"  #다 대문자로 쓰는 것 -> 상수
+# SAMKIM = "삼각김밥"
+# DOSIRAK = "도시락"
+# k_price, s_price, d_price = 2500,1500,4000  
+
+# if item == KIMBAB:
+#     if money >= k_price:
+#         print(f"{KIMBAB}을 구입했습니다")
+#     else:
+#         print("금액이 부족해요")
+# elif item == SAMKIM:
+#     if money >= s_price:
+#         print(f"{SAMKIM}을 구입했습니다")
+#     else:
+#         print("금액이 부족해요")
+# elif item == DOSIRAK:
+#     if money >= d_price:
+#         print(f"{DOSIRAK}을 구입했습니다")
+#     else:
+#         print("금액이 부족해요")
+# else:
+#     print("입력이 잘못됐습니다.") # -> 아 조금 비효율적이다..kimbab k_price가 짝을 이루니까 어??dictionary 사용
+
+# 2) 딕셔너리 사용
+money = int(input("금액을 입력하세요: "))
+item = input("식품을 선택하세요: ")
+prices = {
+    "김밥" : 2500,
+    "삼각김밥" : 1500,
+    "도시락" : 4000
+}
+
+if item in prices:
+    if money >= prices[item]:
+        print(f"{item}을 구입했습니다.")
+    else:
+        print("금액이 부족해요.")
 else:
-    print("금액이 부족합니다.")
+    print("입력이 잘못됐습니다.")
