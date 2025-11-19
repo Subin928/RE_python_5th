@@ -348,3 +348,51 @@ for i in range(1,n+1):
     for j in range(2*i-1):
         print("*", end="")
     print()
+
+
+
+
+# 리스트 컴프리헨션
+# - for문을 리스트에 한줄로 축약하여 새 리스트를 생성하는 문법
+# - [표현식(리스트의 원소) for 변수 in 반복대상 if 조건]
+# - 표현식 : 값을 유도하는 식 (표현)
+
+# for문 이용
+squares = []
+for x in range(1,6):
+    squares.append(x ** 2)
+print(squares) # [1, 4, 9, 16, 25]
+
+# 리스트 컴프리헨션
+squares2 = [x ** 2 for x in range(1,6)] 
+print(squares2) # [1, 4, 9, 16, 25]
+
+
+# 조건문 추가하기
+squares3 = [x ** 2 for x in range(1,11) if x % 2 ==0]
+print(squares3) # [4, 16, 36, 64, 100]
+
+# 실습 4. 리스트 컴프리헨션 연습 문제
+
+# 문제 1. 제곱값 리스트 만들기
+# 1부터 10까지의 숫자에 대해, 각 수의 제곱값을 요소로 갖는 리스트를 리스트 컴프리헨션으로 생성하세요.
+
+squares4 = [x ** 2 for x in range(1,11)]
+print(squares4) # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# 문제 2. 3의 배수만 리스트로 만들기
+# 1부터 50까지의 수 중에서 3의 배수만 포함된 리스트를 리스트 컴프리헨션으로 만들어 출력하세요.
+
+multiply = [x for x in range(1,51) if x % 3 == 0]
+print(multiply) # [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48]
+
+
+# 문제 3. 문자열 리스트에서 길이가 5 이상인 단어만 뽑기
+# 위 리스트에서 글자 수가 5 이상인 단어들만 리스트 컴프리헨셔으로 추출하여 출력하세요.
+# fruits = ["apple", "fig", "banana", "plum", "cherry", "pear", "orange"]
+
+fruits = ["apple", "fig", "banana", "plum", "cherry", "pear", "orange"]
+words = [fruit for fruit in fruits if len(fruit) >= 5]
+print(words) # ['apple', 'banana', 'cherry', 'orange']
+
+
