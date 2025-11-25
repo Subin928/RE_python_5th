@@ -322,6 +322,7 @@ user.change_password("9999","new") # 비밀번호 불일치
 print(user.check_password("abcd")) # True
 
 
+<<<<<<< HEAD
 # 문제 1 정답
 
 class UserAccount:
@@ -348,6 +349,8 @@ class UserAccount:
     user.change_password("wrongpass", "newpass")
 
 
+=======
+>>>>>>> 4510d2e7e3d1c10940c85e2d43b536d31477f9ef
 # 문제 2. Student 클래스 : 성적 검증(@property 사용)
 # Student 클래스를 정의하세요.
 # 인스턴스 변수 __score는 private으로 선언합니다.
@@ -375,6 +378,7 @@ print(s.score) # 90
 s.score = 100
 print(s.score) # 100
 
+<<<<<<< HEAD
 s.score = -10  # ValueError
 
 
@@ -594,3 +598,4 @@ cash = CashPayment()
 
 card.pay(2000) # 카드로 2000원을 결제합니다.
 cash.pay(10000) # 현금으로 10000원을 결제합니다.
+
