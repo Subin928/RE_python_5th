@@ -322,6 +322,32 @@ user.change_password("9999","new") # 비밀번호 불일치
 print(user.check_password("abcd")) # True
 
 
+# 문제 1 정답
+
+class UserAccount:
+    def __init__(self, username, password):
+        self.username = username
+        self.__password = password
+
+    def change_password(self, old_pw, new_pw):
+        if old_pw == self.__password:
+            self.__password = new_pw
+            print("비밀번호가 변경되었습니다.")
+
+        else:
+            print("기존 비밀번호가 일치하지 않습니다.")
+
+    def check_password(self, password):
+        return self.__password == password
+    
+    user = UserAccount("user1", "pass123")
+    print(user.username)
+    print(user.__password)
+
+    print(user.check_password("pass123"))
+    user.change_password("wrongpass", "newpass")
+
+
 # 문제 2. Student 클래스 : 성적 검증(@property 사용)
 # Student 클래스를 정의하세요.
 # 인스턴스 변수 __score는 private으로 선언합니다.
@@ -349,4 +375,220 @@ print(s.score) # 90
 s.score = 100
 print(s.score) # 100
 
-s.score = -10  # ValueError
+
+# 문제 2. 정답
+
+class Student:
+    def __init__(self, name, score):
+        self.name = name
+        self.__score = score
+
+    @property # getter
+    def score(self):
+        return self.__score
+    
+    @score.setter # setter
+    def score(self, value):
+        if 0 <= value <= 100:
+            self.__score = value
+        else:
+            raise ValueError("성적은 0에서 100 사이여야 합니다.")
+        
+s1 = Student("Alice" , 85)
+print(s1.name)
+print(s1.score) # 85
+
+s1.score = 105
+print(s1.score)
+
+
+
+# 상속
+# 부모 클래스의 속성과 메서드를 물려받아 새로운 자녀 클래스를 만드는 것
+
+# 상속 기본 문법
+# 부모 클래스
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def bark(self):
+        print("동물이 울음소리를 냅니다.")
+    
+# 자식 클래스
+class Dog(Animal):
+    pass
+
+dog = Dog("구름이")
+dog.bark()
+print(dog.name) # 구름이
+
+
+
+# super() 사용
+
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("동물이 울음소리를 냅니다.")
+    
+# 자식 클래스
+class Dog(Animal):
+    def __init__(self, name, age, species):
+        # super는 부모를 가리킴
+        super().__init__(name, age)
+        self.species = species
+
+        # 오버라이딩
+        def bark(self):
+            super().bark
+            print("멍멍")
+
+
+dog = Dog("구름이", 12, "포메라니안")
+dog.bark()
+print(dog.name) # 구름이
+print(dog.species) # 포메라니안
+
+
+# 실습 4. 상속과 오버라이딩 연습
+
+# 문제 1. Shape 클래스 오버라이딩
+
+# [Shape 클래스 조건]
+# 생성자를 통해 다음 두 값을 초기화하세요:
+# 변의 개수 (sides)
+# 밑변의 길이 (base)
+# printinfo() 메서드를 정의하여 다음과 같이 출력:
+# 변의 개수: 4
+# 밑변의 길이: 10
+# area() 메서드를 정의하여 "넓이 계산이 정의되지 않았습니다."라는 메시지를 출력
+# -> 자식 클래스에서 이 메서드를 오버라이딩해야 합니다.
+
+# 부모 클래스
+class Shape:
+    def __init__(self, sides, base):
+        self.sides = sides
+        self.base = base
+
+    def printinfo(self):
+        print(f"변의 개수: {self.sides}")
+        print(f"밑변의 길이: {self.base}")
+    def area(self):
+        print("넓이 계산이 정의되지 않았습니다.")
+
+
+# [Rectangle 클래스 조건]
+# Shape를 상속받습니다.
+# 생성자에서 sides, base, height를 모두 초기화합니다.
+# area() 메서드를 오버라이딩하여 base * height 값을 출력합니다.
+
+# 자식 클래스 : Rectangle
+
+class Rectangle(Shape):
+    def __init__(self, sides, base, height):
+        super().__init__(sides, base)
+        self.height = height
+
+    def area(self):
+        area = self.base * self.height
+        print(f"{self.sides}각형의 넓이: {area}")
+
+
+# [Triangle 클래스 조건]
+# Shape를 상속받습니다.
+# 생성자에서 sides, base, height를 모두 초기화합니다.
+# area() 메서드를 오버라이딩하여 (base*height) / 2 값을 출력합니다.
+
+# 자식 클래스 : Triangle
+
+class Triangle(Shape):
+    def __init__(self, sides, base, height):
+        super().__init__(sides, base)
+        self.height = height
+
+    def area(self):
+        area = int((self.base * self.height)/2)
+        print(f"{self.sides}각형의 넓이: {area}")
+
+# [실행]
+# Rectangle과 Triangle 객체를 생성합니다.
+# 각 객체에 대해 printinfo()와 area() 메서드를 차례로 호출하세요.
+
+r = Rectangle(4, 10, 5)
+r.printinfo()
+r.area()
+
+# 변의 개수: 4
+# 밑변의 길이: 10
+# 4각형의 넓이: 50
+
+print()
+t = Triangle(3, 8, 6)
+t.printinfo()
+t.area()
+
+# 변의 개수: 3
+# 밑변의 길이: 8
+# 3각형의 넓이: 24
+
+
+
+# 추상 클래스 (Abstract Class)
+# 클래스의 구조를 정의하는 클래스
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    # 추상 메서드
+    @abstractmethod
+    def bark(self):
+        pass
+
+class Dog(Animal):
+    def bark(self):
+        print("멍멍")
+
+a = Animal()
+a = Dog()
+a.bark()
+
+
+
+# 실습 5. 추상 클래스 연습 문제
+
+# 문제. 추상 클래스 Payment 구현
+
+# 아래 조건을 만족하는 클래스를 구현하세요.
+# 추상 클래스 Payment를 정의하고, pay(amount)를 추상 메서드로 선언하세요. (abc 모듈 사용)
+# CardPayment 클래스와 CashPayment 클래스는 Payment를 상속받아 pay() 메서드를 오버라이딩하세요.
+# CardPayment: 카드로 {amount}원을 결제합니다. 출력
+# CashPayment: 현금으로 {amount}원을 결제합니다. 출력
+
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+class CardPayment(Payment):
+    def __init__(self):
+        # pass
+        super().__init__()
+
+    def pay(self, amount):
+        print(f"카드로 {amount}원을 결제합니다.")
+
+class CashPayment(Payment):
+    def pay(self, amount):
+        print(f"현금으로 {amount}원을 결제합니다.")
+
+card = CardPayment()
+cash = CashPayment()
+
+card.pay(2000) # 카드로 2000원을 결제합니다.
+cash.pay(10000) # 현금으로 10000원을 결제합니다.
