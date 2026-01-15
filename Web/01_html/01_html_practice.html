@@ -1,0 +1,168 @@
+<!-- 실습 1 tag - 카페 메뉴-->
+
+<!Doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>카페 메뉴</title>
+</head>
+<body>
+    <h1>스타벅스</h1>
+    <h2>메뉴</h2>
+
+    <a href="https://www.starbucks.co.kr/whats_new/campaign_view.do?pro_seq=3220" target="_blank">
+    <img src="./starbucks_menu.png" alt="스타벅스 메뉴" width="400">
+    </a>
+
+    <ul>
+        <li>
+            <strong>더블 에스프레소 크림 라떼</strong>
+            <ol>
+                <li> T: 6500원</li>
+                <li> G: 7300원</li>
+                <li> V: 8100원</li>
+            </ol>
+        </li>
+
+        <li>
+            <strong>유자 배 캐모마일 티</strong>
+            <ol>
+                <li> T: 6300원</li>
+                <li> G: 7100원</li>
+                <li> V: 7900원</li>
+            </ol>            
+        </li>
+
+        <li>
+            <strong>붉은말 당근밭 케이크</strong>
+            <ol>
+                <li>가격: 9500원</li>
+            </ol>            
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>메뉴 설명</h2>
+    <p><b>더블 에스프레소 크림 라떼</b>는 부드러운 커피 크림, 달콤한 바닐라와 진한 에스프레소가 어우러져 깊은 커피 풍미가 가득한 라떼입니다.</p>
+    <p><b>유자 배 캐모마일 티</b>는 각 수확해서 더 향극한 남해 햇유자, 산뜻한 서양배, 스타벅스 티바나 캐모마일 티가 은은하게 어우러진 과일 블랜딩 티 입니다.</p>
+    <p><b>붉은말 당근밭 케이크</b>는 붉은말의 해를 맞이하여 귀여운 말이 뛰어노는 당근 밭을 형상화한 케이크입니다. 피칸과 당근을 넣은 고소한 시트와 부드러운 마스카포네 치즈 생크림의 조화가 특징인 케이크입니다.</p>
+</html>
+
+<!-- 실습 2 form - 설문조사-->
+
+<body>
+
+    <h3>설문조사</h3>
+
+    <form>
+
+        이름
+        <input type="text" name="" id=""><br>
+
+        이메일
+        <input type="email" placeholder="love@example.com" id=""><br>
+
+        <h4>나이</h4>
+        <input type="radio" name="age" value="10대"> 10대
+        <input type="radio" name="age" value="20대"> 20대
+        <input type="radio" name="age" value="30대"> 30대
+        <input type="radio" name="age" value="40대"> 40대
+        <input type="radio" name="age" value="50대"> 50대
+        <input type="radio" name="age" value="60대 이상"> 60대 이상
+
+        <br><br>
+
+        <h4>원하는 강의 (복수응답가능합니다.)</h4>
+        <input type="checkbox" name="lecture" value="html"> html
+        <input type="checkbox" name="lecture" value="html"> javascript
+        <input type="checkbox" name="lecture" value="html"> css
+
+        <br><br>
+
+        <textarea rows="8" cols="80" placeholder="하고 싶은 말을 써주세요 :)"></textarea>
+
+        <input type="button" value="제출">
+
+    </form>
+
+<!-- 실습 3 table-->
+
+<table border="1" cellspacing="0" cellpadding="10" width="500" height="300">
+
+    <tr>
+        <td colspan="2" align="center">1</td>
+        <td rowspan="2" align="center">2</td>
+    </tr>
+
+    <tr>
+        <td rowspan="2" align="center">3</td>
+        <td align="center">center</td>
+    </tr>
+
+    <tr>
+        <td colspan="2" align="center">4</td>
+    </tr>
+
+    </table>
+
+<!-- 실습 4 table - 카페 메뉴-->
+
+<body>
+
+    <h1>카페 음료 주문 테이블</h1>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>구분</th>
+            <th>음료</th>
+            <th>가격</th>
+            <th>이미지</th>
+        </tr>
+
+        <tr>
+            <td rowspan="2" align="center">커피류</td>
+            <td align="center">아메리카노</td>
+            <td>4700원</td>
+            <td>
+                <a href="https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[110563]_20250626094354080.jpg">
+                    <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[110563]_20250626094354080.jpg" width="80">
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">아이스 더블 에스프레소 크림 라떼</td>
+            <td>6500원</td>
+            <td>
+                <a href="https://image.istarbucks.co.kr/upload/store/skuimg/2025/12/[9200000003255]_20251216150646660.jpg">
+                    <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2025/12/[9200000003255]_20251216150646660.jpg" width="80">
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="2" align="center">티류</td>
+            <td align="center">유자 배 캐모마일 티</td>
+            <td>6300원</td>
+            <td>
+                <a href="https://image.istarbucks.co.kr/upload/store/skuimg/2025/12/[9200000006646]_20251216151919633.jpg">
+                    <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2025/12/[9200000006646]_20251216151919633.jpg" width="80">
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">아이스 자몽 허니 블랙 티</td>
+            <td>5900원</td>
+            <td>
+                <a href="https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[9200000000190]_20250626093924844.jpg">
+                    <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[9200000000190]_20250626093924844.jpg" width="80">
+                </a>
+            </td>
+        </tr>
+
+    </table>
+    
+</body>
+</html>
