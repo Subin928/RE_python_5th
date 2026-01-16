@@ -54,3 +54,12 @@ input:focus {
 .fruits *:not(li) {
     color: blue;
 }
+
+/* 가상 요소 선택자 */
+.box::after {
+    content: ' 목록';
+}
+
+.box::before {
+    content: '추천 ';
+}
