@@ -7,17 +7,13 @@
 
     <style>
         .stripes {
-            width: 300px;
-        }
-
-        .stripes div {
-            background-color: navy;
             color: white;
+            background-color: navy;
         }
 
-        .stripes div:nth-child(4n-1) {
-            background-color: yellow;
+        .stripes > *:nth-child(4n+2) {
             color: black;
+            background-color: yellow;
         }
     </style>
 </head>
