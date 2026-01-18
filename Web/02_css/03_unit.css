@@ -1,47 +1,57 @@
+/* 루트 font-size 설정 (rem 기준점) */
 html {
     font-size: 16px;
 }
 
+/* 모든 요소에 border-box 적용 (실무 필수) */
 * {
     box-sizing: border-box;
 }
 
-.px-box {
-    width: 200px;
-    background-color: beige;
+/* 공통 스타일 */
+.box {
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
+/* 1. px - 절대 단위 (고정 크기) */
+.px-box {
+    width: 200px;
+    background-color: lightpink;
+}
+
+/* 2. % - 부모 요소 기준 상대 단위 */
 .percent-wrapper {
-    width: 50%;
+    width: 50%;  /* body(화면)의 50% */
+    border: 3px dashed skyblue;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 .percent-box {
-    width: 100%;
-    background-color: lightcyan;
+    width: 100%;  /* 부모(.percent-wrapper)의 100% = 화면의 50% */
+    background-color: lightblue;
 }
 
+/* 3. em - 부모 font-size 기준 */
 .em-box {
-    font-size: 2em;
-    width: 10em;
+    font-size: 2em;  /* 부모(body)의 16px × 2 = 32px */
+    width: 10em;     /* 자신의 font-size(32px) × 10 = 320px */
     background-color: lightyellow;
 }
 
+/* 4. rem - html(루트) font-size 기준 */
 .rem-box {
-    font-size: 2rem;
-    width: 10em;
-    background-color: lightsalmon;
+    font-size: 2rem;  /* html의 16px × 2 = 32px */
+    width: 20rem;     /* html의 16px × 20 = 320px */
+    background-color: peachpuff;
 }
 
+/* 5. vw/vh - 뷰포트(화면) 크기 기준 */
 .viewport-box {
-    width: 70vw;
-    background-color: azure;
-}
-
-.box {
-    border: 2px solid black;
-    /* border-top: 3px inset blue;
-    border-bottom: 1px dotted red; */
-    border-width: 1px 2px 3px 4px;
-    padding: 20px 10px;
-    margin: 10px;
+    width: 70vw;   /* 화면 너비의 70% */
+    height: 30vh;  /* 화면 높이의 30% */
+    background-color: lavender;
 }
