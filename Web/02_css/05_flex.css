@@ -1,17 +1,44 @@
-.container {
-    display: flex;
-    /* flex 방향 */
-    /* flex-direction: column-reverse; */
-    /* 주축 기준 정렬 */
-    /* justify-content: flex-start; */
-    /* 교차축 기준 정렬 */
-    align-items: center;
-    flex-wrap: wrap;
+/* 05_flex.css */
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: lavender;
 }
 
+h1 {
+    text-align: center;
+    color: darkslateblue;
+}
+
+/* Flex Container */
+.container {
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+}
+
+/* Flex Items */
 .item {
-    border: 1px solid black;
-    width: 200px;
-    height: 200px;
-    background-color: beige;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    
+    background-color: mediumpurple;
+    border: 3px solid rebeccapurple;
+    
+    /* 텍스트 가운데 정렬 */
+    text-align: center;
+    line-height: 150px;
+    
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
 }
