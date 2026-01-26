@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>LED Control</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        margin-top: 10vh;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+      }
+      button {
+        padding: 12px 20px;
+        border: 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-size: 16px;
+      }
+      #on {
+        background: #10b981;
+        color: white;
+      }
+      #off {
+        background: #ef4444;
+        color: white;
+      }
+      #status {
+        font-weight: 600;
+      }
+    </style>
+
+    <script>
+      let port, writer;
+
+      async function connect() {
+        try {
+          port = await navigator.serial.requestPort();
+          await port.open({baudRate: 9600});
+          writer = port.writable.getWriter();
+          
+          // 아두이노 리셋 안정화를 위한 대기
+          await new Promise((r) => setTimeout(r, 1500));
+
+          // on 버튼과 off 버튼 활성화
+          on.disable = off.disable = false;
+        } catch (e) {
+          alert("연결 실패: " + e.message);
+        }
+      }
+      async function sendChar(ch) {
+        if(!writer) return;
+        const data = new TextEncoder().encode(ch);
+        await writer.write(data);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Arduino LED Control without python</h1>
+    <div class="row">
+      <button id="content" onclick="connect();">Connect</button>
+      <button id="on" onclick="sendChar('1');">LED ON</button>
+      <button id="off" onclick="sendChar('0');">LED OFF</button>
+    </div>
+  </body>
+</html>
