@@ -33,10 +33,10 @@ console.log("평균", avgScore + "점");
 // 3. 성적 평균 구하는 프로그램 만들기
 
 // prompt로 입력받은 값은 string 타입 값을 number로 형변환해서 변수에 저장
-let mathScore2 = Number(prompt('수학점수 입력'));
-let engScore2 = Number(prompt('영어점수 입력'));
-let avg = (mathScore2) + (engScore2)/ 2;
-console.log(`수학과 영어의 평균 점수는 ${avg}점 입니다.`);
+// let mathScore2 = Number(prompt('수학점수 입력'));
+// let engScore2 = Number(prompt('영어점수 입력'));
+// let avg = (mathScore2) + (engScore2)/ 2;
+// console.log(`수학과 영어의 평균 점수는 ${avg}점 입니다.`);
 
 // 3. 함수 만들기1
 // multifly() 함수를 함수 선언문 형식으로 만들어주세요
@@ -68,4 +68,90 @@ const square = (x) => {
   x = Number(x);
   return x ** 2;
 };
+
+// 4. if문 실습
+// if문을 이용해서 console창에 연령대별 단어 출력해보기!
+// age 변수 선언, prompt로 입력받기
+// age가 20이상: 성인
+// age가 17 이상: 고등학생
+// age가 14 이상: 중학생
+// age가 8 이상: 초등학생
+// age가 0 이상: 유아
+
+// let age = Number(prompt('나이를 입력하세요'));
+
+// if (age >= 20) {
+//     console.log('성인');
+// } else if (age >= 17) {
+//     console.log('고등학생');
+// } else if (age >= 14) {
+//     console.log('중학생');
+// } else if (age >= 8) {
+//     console.log('초등학생');
+// } else if (age >= 0) {
+//     console.log('유아');
+// }
+
+// 5. 삼항연산자 실습
+// let now = new Date().getHours();
+// 위의 코드는 현재 '시간'만을 받아오는 코드
+// 0~23까지의 숫자를 반환하고 0이 자정, 12가 정오를 뜻한다
+// now라는 변수에는 현재 시간에 대한 숫자가 저장이 되어있다
+// 삼항연산자로 지금이 오전인지 오후인지 콘솔창에 출력
+
+// let now = new Date().getHours();
+// console.log('현재시간', now);
+
+// now < 12 ? console.log('오전') : console.log('오후');
+
+// 6. 반복문 실습 - 배수 찾기
+// 10000까지의 숫자 중에서
+// 13의 배수이면서 홀수인 숫자 찾기
+// prompt를 이용해서 입력받은 수까지 13의 배수면서 홀수인 숫자를 찾는 프로그램 만들기
+
+for (let i = 1; i <= 10000; i++) {
+    if (i % 13 === 0 && i % 2 === 1) {
+    console.log(i);
+    }
+}
+
+// 추가) prompt 사용
+// let num = Number(prompt('범위 입력'));
+
+// console.log(`1~${num}의 숫자 중 13의 배수이면서 홀수인 숫자 구하기`);
+
+// for (let i = 1; i <= num; i++) {
+//     if (i % 13 === 0 && i % 2 === 1) {
+//     console.log(i);
+//     }
+// }
+
+// 7. 이중 for문 실습 - 구구단 출력
+
+// console.log('구구단');
+
+// for (let i = 1; i < 10; i++) {
+//    console.log(`=== ${단} ===`);
+//    for (let j = 1; j < 10; j++) {
+//        console.log(`${i} X ${j} = ${i * j}`);
+//    }
+//}
+
+// 8. 0~100의 숫자 중에서 2 또는 5의 배수 총합 구하기
+// 힌트
+// 나머지 연산자 % 사용
+
+console.log('=== 2 또는 5의 배수 총합 ===');
+
+let total = 0; // 합
+let count = 0; // for문에서 i 역할 (반복 횟수)
+
+while (count <= 100) {
+    if (count % 2 === 0 || count % 5 === 0) {
+        total += count;
+    }
+    count++;
+}
+
+console.log('0`100까지의 총합', total);
 
