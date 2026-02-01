@@ -155,3 +155,95 @@ while (count <= 100) {
 
 console.log('0`100까지의 총합', total);
 
+// 9. 내장 메소드 실습문제1 - 배열과 반복문 실습
+// 1~100 까지의 배열을 for문을 사용해서 만들기
+// 그리고 해당 배열의 합을
+// for문
+// for of문
+// forEach문
+
+let numbers =[];
+for (let i = 1; i <= 100; i++) {
+    numbers.push(i);
+}
+
+// for문
+let sum1 = 0;
+for (let i = 1; i <= 100; i++) {
+    sum1 += numbers[i];
+}
+console.log(sum1);
+
+// for of문
+let sum2 = 0;
+for (let num of numbers) {
+    sum2 += num;
+}
+console.log(sum2);
+
+// forEach문
+let sum3 = 0;
+numbers.forEach((num) => {
+    sum3 += num;
+});
+console.log(sum3);
+
+// reduce
+let sum4 = numbers.reduce((acc, cur) => acc + cur);
+
+// 10. 내장 메소드 실습문제2 - 내장 메소드 실습
+// 참고)) fruits1은 fruits2를 포함하고 있습니다
+let fruits1 = ['사과', '딸기', '파인애플', '수박', '참외','오렌지', '자두', '망고'];
+let fruits2 = ['수박', '사과', '참외', '오렌지', '파인애플', '망고'];
+
+// 두 배열에서 동일한 요소만을 가지는 배열 same 만들기
+let same = fruits1.filter((fruit) => fruits2.includes(fruit));
+console.log(same);
+
+// 두 배열에서 서로 다른 요소만을 가지는 배열 diff 만들기
+let diff = fruits1.filter((fruit) => !fruits2.includes(fruit));
+console.log(diff);
+
+// 11. 내장 객체 실습문제 - 주말과 평일
+// JS에 내장된 Date 객체 활용
+// Date.getDay(): 요일별로 0~6(일~토)로 숫자 반환
+let nowDay = new Date().getDay();
+
+// switch문
+switch (nowDay) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5: 
+        console.log("평일");      
+        break;
+    case 0:
+    case 6:
+        console.log("주말");
+        break;
+    default:
+        console.log("몰라요");
+        break;
+}
+
+// if - else문
+if (nowDay === 0 || nowDay === 6) {
+    console.log("주말");
+} else {
+    console.log("평일");
+}
+
+// 삼항연산자
+let today = nowDay === 0 || nowDay === 6 ? '주말' : '평일';
+console.log(today);
+
+// 12. 내장 객체 실습문제 - 난수 생성
+// 0~10 사이의 랜덤한 숫자를 출력
+// 0과 10은 포함해서 뽑음
+// Math.random(): 0이상 1미만의 난수 생성
+// Math.floor(x): 양수 기준으로는 소수점 버림, 음수 기준으로는 더 작은 음수로 소수점 사라짐
+
+// Math.random() * 10의 결과는 0이상 10미만 결과 출력
+// 실습 조건은 10을 포함해야 함 -> Math.random() * 11
+console.log(Math.floor(Math.random() * 11));
